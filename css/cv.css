@@ -1,0 +1,79 @@
+#poste {
+    color:orange;
+    font-weight: bold;
+}
+
+#entrep {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#story {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#espace {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+#item {
+    color: orange;
+    text-align: center;
+    border-bottom: 2px solid burlywood;
+}
+
+#user {
+    font-weight: bold;
+}
+
+#identity {
+    text-align: center;
+    font-size: x-large;
+}
+
+h3 {
+    font-size: medium;
+}
+
+#british {
+    width: 30px;
+    height: 30px;
+}
+
+#email {
+    font-size:16px;
+}
+
+#links{
+    text-align: justify;
+    margin-left: 10px;
+}
+
+#linkedin {
+    width: 20px;
+    height: 20px;
+}
+
+#gitlab {
+    width: 60px;
+    height: 60px;
+}
+
+#linkedin {
+    width: 20px;
+    height: 20px;
+}
+
+@media print {
+  /* Masquer les éléments inutiles au format papier */
+  .no-print, button, nav {
+    display: none !important;
+  }
+  
+  /* Forcer le fond blanc et ajuster les marges */
+  body {
+    background: white;
+    color: black;
+  }
+}
