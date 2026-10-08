@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CVDocument",
+  "type": "object",
+  "required": ["document"],
+  "additionalProperties": false,
+  "properties": {
+    "document": {
+      "type": "object",
+      "required": ["format", "type", "title", "parts"],
+      "additionalProperties": false,
+      "properties": {
+        "format": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "parts": {
+          "type": "object",
+          "required": [
+            "identity",
+            "experience",
+            "technical skills",
+            "interpersonal skills",
+            "other experience",
+            "training",
+            "recognition as a disabled worker"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "identity": {
+              "type": "object",
+              "required": ["first_name", "last_name", "phone", "email", "driving_license", "languages", "links"],
+              "additionalProperties": false,
+              "properties": {
+                "first_name": { "type": "string" },
+                "last_name": { "type": "string" },
+                "phone": { "type": "string" },
+                "email": { "type": "string", "format": "email" },
+                "driving_license": { "type": "string" },
+                "languages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["language", "level"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "language": { "type": "string" },
+                      "level": { "type": "string" }
+                    }
+                  }
+                },
+                "links": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["label", "url"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "label": { "type": "string" },
+                      "url": { "type": "string", "format": "uri" }
+                    }
+                  }
+                }
+              }
+            },
+            "experience": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["job_title", "company", "date", "tasks"],
+                "additionalProperties": false,
+                "properties": {
+                  "job_title": { "type": "string" },
+                  "company": { "type": "string" },
+                  "date": { "type": "string" },
+                  "tasks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["title", "description"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "title": { "type": "string" },
+                        "description": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "technical skills": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["category", "tools"],
+                "additionalProperties": false,
+                "properties": {
+                  "category": { "type": "string" },
+                  "tools": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            },
+            "interpersonal skills": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["skill", "description"],
+                "additionalProperties": false,
+                "properties": {
+                  "skill": { "type": "string" },
+                  "description": { "type": "string" }
+                }
+              }
+            },
+            "other experience": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["title", "start_date", "end_date"],
+                "additionalProperties": false,
+                "properties": {
+                  "title": { "type": "string" },
+                  "start_date": { "type": "string" },
+                  "end_date": { "type": "string" },
+                  "details": { "type": "string" }
+                }
+              }
+            },
+            "training": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["institution", "title", "description"],
+                "additionalProperties": false,
+                "properties": {
+                  "institution": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" }
+                }
+              }
+            },
+            "recognition as a disabled worker": {
+              "type": "object",
+              "required": ["status"],
+              "additionalProperties": false,
+              "properties": {
+                "status": { "type": "boolean" },
+                "details": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
